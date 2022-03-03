@@ -1,7 +1,7 @@
-import { Song } from '@angular-production/api-interfaces';
-import { Component, OnInit } from '@angular/core';
-import {Observable} from "rxjs";
-import {SongService} from "@angular-production/core-data";
+import { Song } from '@angular-production/api-interfaces'
+import { Component, OnInit } from '@angular/core'
+import { Observable } from 'rxjs'
+import { SongService } from '@angular-production/core-data'
 
 const mockSongs: Song[] = [
   {
@@ -19,13 +19,13 @@ const mockSongs: Song[] = [
     title: 'Norton Commander',
     description: 'A chill alternative song by Men I Trust',
   },
-];
+]
 
 const emptySong: Song = {
   id: null,
   title: '',
   description: '',
-};
+}
 
 @Component({
   selector: 'angular-production-songs',
@@ -33,39 +33,39 @@ const emptySong: Song = {
   styleUrls: ['./songs.component.scss'],
 })
 export class SongsComponent implements OnInit {
-  songs: Song[];
-  songs$: Observable<Song[]>;
-  selectetSong: Song;
-  constructor(private songService:SongService) {}
+  songs: Song[]
+  songs$: Observable<Song[]>
+  selectetSong: Song
+  constructor(private songService: SongService) {}
 
   ngOnInit(): void {
-    this.songs$ = this.songService.all();
-    this.songs = mockSongs;
-    this.selectetSong = emptySong;
+    this.songs$ = this.songService.all()
+    this.songs = mockSongs
+    this.selectetSong = emptySong
   }
 
   selectSong(song: Song) {
-    this.selectetSong = song;
+    this.selectetSong = song
   }
 
   deleteSong(song: Song) {
-    this.songs = this.songs.filter((w) => song.id !== w.id);
-    this.selectetSong = emptySong;
+    this.songs = this.songs.filter((w) => song.id !== w.id)
+    this.selectetSong = emptySong
   }
 
   saveSong(song: Song) {
     if (song.id) {
-      this.updateSong(song);
+      this.updateSong(song)
     } else {
-      this.createSong(song);
+      this.createSong(song)
     }
   }
 
   updateSong(song: Song) {
     this.songs = this.songs.map((w) => {
-      return song.id === w.id ? song : w;
-    });
-    this.resetSongDetails();
+      return song.id === w.id ? song : w
+    })
+    this.resetSongDetails()
   }
 
   createSong(song: Song) {
@@ -73,16 +73,16 @@ export class SongsComponent implements OnInit {
       id: this.getRandomID(),
       title: song.title,
       description: song.description,
-    };
-    this.songs = [...this.songs, newSong];
-    this.resetSongDetails();
+    }
+    this.songs = [...this.songs, newSong]
+    this.resetSongDetails()
   }
 
   private getRandomID() {
-    return Math.random().toString(36).substring(7);
+    return Math.random().toString(36).substring(7)
   }
 
   resetSongDetails() {
-    this.selectetSong = emptySong;
+    this.selectetSong = emptySong
   }
 }

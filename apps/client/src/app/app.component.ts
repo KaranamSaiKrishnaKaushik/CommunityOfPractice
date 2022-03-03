@@ -1,21 +1,21 @@
-import {Component, OnInit} from '@angular/core';
-import {SongService} from '@angular-production/core-data';
-import {Observable} from "rxjs";
-import {Song} from "@angular-production/api-interfaces";
+import { Component, OnInit } from '@angular/core'
+import { SongService } from '@angular-production/core-data'
+import { Observable } from 'rxjs'
+import { Song } from '@angular-production/api-interfaces'
 
 @Component({
   selector: 'angular-production-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit{
-  title = 'client';
+export class AppComponent implements OnInit {
+  title = 'client'
 
-  constructor(private songService: SongService){}
+  constructor(private songService: SongService) {}
 
   ngOnInit(): void {
-    this.songs$ = this.songService.all();
+    this.songs$ = this.songService.all()
   }
 
-  songs$ : Observable<Song[]> | undefined;
+  songs$: Observable<Song[]> | undefined
 }

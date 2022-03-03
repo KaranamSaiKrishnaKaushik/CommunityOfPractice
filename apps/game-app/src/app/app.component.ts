@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
-import { getAllGames } from '../example-api';
-
+import { Component } from '@angular/core'
+import { getAllGames } from '../example-api'
 
 @Component({
   selector: 'angular-production-root',
@@ -8,6 +7,6 @@ import { getAllGames } from '../example-api';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'shopping-list';
-  games = getAllGames();
+  title = 'shopping-list'
+  games = getAllGames()
 }

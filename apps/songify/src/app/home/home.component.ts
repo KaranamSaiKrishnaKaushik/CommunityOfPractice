@@ -1,7 +1,7 @@
-import { Song } from '@angular-production/api-interfaces';
-import { Component, OnInit } from '@angular/core';
-import {Observable} from "rxjs";
-import {SongService} from "@angular-production/core-data";
+import { Song } from '@angular-production/api-interfaces'
+import { Component, OnInit } from '@angular/core'
+import { Observable } from 'rxjs'
+import { SongService } from '@angular-production/core-data'
 
 @Component({
   selector: 'angular-production-home',
@@ -28,10 +28,10 @@ export class HomeComponent implements OnInit {
     },
   ];
   */
-   songs$ : Observable<Song[]>;
+  songs$: Observable<Song[]>
   constructor(private songService: SongService) {}
 
   ngOnInit(): void {
-    this.songs$ = this.songService.all();
+    this.songs$ = this.songService.all()
   }
 }

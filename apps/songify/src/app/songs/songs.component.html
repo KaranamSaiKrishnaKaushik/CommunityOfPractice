@@ -8,11 +8,7 @@
     </angular-production-songs-list>
   </div>
   <div class="details-component">
-    <angular-production-songs-details
-      [song]="selectetSong"
-      (saved)="saveSong($event)"
-      (cancelled)="resetSongDetails()"
-    >
+    <angular-production-songs-details [song]="selectetSong" (saved)="saveSong($event)" (cancelled)="resetSongDetails()">
     </angular-production-songs-details>
   </div>
 </div>

@@ -1,7 +1,7 @@
 {
   "extends": "../../tsconfig.base.json",
   "files": [],
-  "include": [".eslintrc.json","./app/**/*","./app.component.ts"],
+  "include": [".eslintrc.json", "./app/**/*", "./app.component.ts"],
   "references": [
     {
       "path": "./tsconfig.app.json"

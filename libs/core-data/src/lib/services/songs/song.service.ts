@@ -1,33 +1,32 @@
-import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {Song} from "@angular-production/api-interfaces";
+import { Injectable } from '@angular/core'
+import { HttpClient } from '@angular/common/http'
+import { Song } from '@angular-production/api-interfaces'
 
- const ENDPOINT = 'http://localhost:3000/songs'
+const ENDPOINT = 'http://localhost:3000/songs'
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SongService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http : HttpClient) { }
-
-  all(){
-    return this.http.get<Song[]>(ENDPOINT);
+  all() {
+    return this.http.get<Song[]>(ENDPOINT)
   }
 
-  find(id: string){
-    return this.http.get<Song>(ENDPOINT + `/${id}`);
+  find(id: string) {
+    return this.http.get<Song>(ENDPOINT + `/${id}`)
   }
 
-  create(song: Song){
-    return this.http.post(ENDPOINT, song);
+  create(song: Song) {
+    return this.http.post(ENDPOINT, song)
   }
 
-  update(song: Song){
-    return this.http.put(ENDPOINT + `/${song.id}`, song);
+  update(song: Song) {
+    return this.http.put(ENDPOINT + `/${song.id}`, song)
   }
 
-  delete(song: Song){
-    return this.http.delete(ENDPOINT + `/${song.id}`);
+  delete(song: Song) {
+    return this.http.delete(ENDPOINT + `/${song.id}`)
   }
 }

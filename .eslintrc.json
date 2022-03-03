@@ -1,20 +1,10 @@
 {
   "root": true,
-  "ignorePatterns": [
-    "**/*"
-  ],
-  "plugins": [
-    "@typescript-eslint",
-    "@nrwl/nx"
-  ],
+  "ignorePatterns": ["**/*"],
+  "plugins": ["@typescript-eslint", "@nrwl/nx"],
   "overrides": [
     {
-      "files": [
-        "*.ts",
-        "*.tsx",
-        "*.js",
-        "*.jsx"
-      ],
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "parser": "@typescript-eslint/parser",
       "parserOptions": {
         "project": ["app/songify/tsconfig.*?.json"]
@@ -28,44 +18,24 @@
             "depConstraints": [
               {
                 "sourceTag": "*",
-                "onlyDependOnLibsWithTags": [
-                  "*"
-                ]
+                "onlyDependOnLibsWithTags": ["*"]
               }
             ]
           }
         ]
       },
-      "plugins": [
-        "ngrx"
-      ],
-      "extends": [
-        "eslint:recommended",
-        "plugin:ngrx/recommended"
-      ]
+      "plugins": ["ngrx"],
+      "extends": ["eslint:recommended", "plugin:ngrx/recommended"]
     },
     {
-      "files": [
-        "*.ts",
-        "*.tsx"
-      ],
-      "extends": [
-        "plugin:@nrwl/nx/typescript",
-        "plugin:ngrx/recommended"
-      ],
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["plugin:@nrwl/nx/typescript", "plugin:ngrx/recommended"],
       "rules": {},
-      "plugins": [
-        "ngrx"
-      ]
+      "plugins": ["ngrx"]
     },
     {
-      "files": [
-        "*.js",
-        "*.jsx"
-      ],
-      "extends": [
-        "plugin:@nrwl/nx/javascript"
-      ],
+      "files": ["*.js", "*.jsx"],
+      "extends": ["plugin:@nrwl/nx/javascript"],
       "rules": {}
     }
   ]

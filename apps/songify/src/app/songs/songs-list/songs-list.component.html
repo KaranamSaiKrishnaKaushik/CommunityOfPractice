@@ -8,9 +8,7 @@
         class="mat-list-option"
         (click)="selected.emit(song)"
       >
-        <span matLine attr.data-cy="song-{{ song.id }}-item-title">{{
-          song.title
-        }}</span>
+        <span matLine attr.data-cy="song-{{ song.id }}-item-title">{{ song.title }}</span>
         <button
           *ngIf="!readonly"
           attr.data-cy="delete-song-{{ song.id }}-btn"
