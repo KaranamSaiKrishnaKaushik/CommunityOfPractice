@@ -47,6 +47,13 @@
     "core-state": {
       "tags": []
     },
+    "game-app": {
+      "tags": []
+    },
+    "game-app-e2e": {
+      "tags": [],
+      "implicitDependencies": ["game-app"]
+    },
     "material": {
       "tags": []
     },

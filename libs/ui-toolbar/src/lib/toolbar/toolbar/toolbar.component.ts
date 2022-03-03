@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit , Output} from '@angular/core';
+import { Component, EventEmitter, OnInit ,Input, Output} from '@angular/core';
 
 @Component({
   selector: 'songify-toolbar',
@@ -7,6 +7,7 @@ import { Component, EventEmitter, OnInit , Output} from '@angular/core';
 })
 export class ToolbarComponent implements OnInit {
 
+  @Input() title='';
   @Output() sidenav = new EventEmitter();
   constructor() { }
 
