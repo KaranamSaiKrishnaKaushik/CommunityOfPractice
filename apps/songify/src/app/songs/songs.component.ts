@@ -49,8 +49,8 @@ export class SongsComponent implements OnInit {
   }
 
   deleteSong(song: Song) {
-    this.songs = this.songs.filter((w) => song.id !== w.id)
-    this.selectetSong = emptySong
+    this.songService.delete(song).subscribe((res)=>(this.songs$= this.songService.all()));
+    this.selectetSong = emptySong;
   }
 
   saveSong(song: Song) {
@@ -62,19 +62,12 @@ export class SongsComponent implements OnInit {
   }
 
   updateSong(song: Song) {
-    this.songs = this.songs.map((w) => {
-      return song.id === w.id ? song : w
-    })
+    this.songService.update(song).subscribe((res)=>(this.songs$= this.songService.all()));
     this.resetSongDetails()
   }
 
   createSong(song: Song) {
-    const newSong = {
-      id: this.getRandomID(),
-      title: song.title,
-      description: song.description,
-    }
-    this.songs = [...this.songs, newSong]
+    this.songService.create(song).subscribe((res)=>(this.songs$= this.songService.all()));
     this.resetSongDetails()
   }
 

@@ -103,3 +103,4 @@ Visit [Nx Cloud](https://nx.app/) to learn more.
 `npm install @nrwl/angular`
 `npm install @angular/material`
 `npm install @angular/cdk`
+`npm install @nestjs/mapped-types`
